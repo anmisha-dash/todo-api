@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <h1 class="heading">Todo API</h1>
+    <p class="subheading">Frontend connected to Express backend</p>
+
+    <!-- stats -->
+    <div class="stats-row" id="statsRow"></div>
+
+    <!-- add todo -->
+    <div class="add-box">
+      <input type="text" id="todoInput" placeholder="Add a new todo..." />
+      <select id="prioritySelect">
+        <option value="high">High</option>
+        <option value="medium" selected>Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <button onclick="addTodo()">Add</button>
+    </div>
+
+    <!-- filters -->
+    <div class="filters">
+      <button class="filter-btn active" onclick="setFilter(this,'all')">All</button>
+      <button class="filter-btn" onclick="setFilter(this,'pending')">Pending</button>
+      <button class="filter-btn" onclick="setFilter(this,'completed')">Completed</button>
+      <button class="clear-btn" onclick="clearCompleted()">Clear Completed</button>
+    </div>
+
+    <!-- todos list -->
+    <div class="todos-list" id="todosList"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
